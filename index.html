@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tropical Escape - Mabini Batangas</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+   /* BACK-TO-TOP BUTTON - ENHANCED */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;        /* bottom-right corner */
+  right: 20px;
+  z-index: 999;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.7); /* gray with transparency */
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;  /* rectangular shape */
+  border-radius: 8px;   /* slightly rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+#backToTop:hover {
+  background-color: rgba(128, 128, 128, 1); /* fully opaque on hover */
+  transform: translateY(-3px);  /* subtle lift effect */
+}
+
+
+
+    /* IMAGE HOVER ZOOM */
+    .image-card img {
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .image-card:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* ANIMATED COUNTER */
+    .counter {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffb703;
+      margin: 0.5em 0;
+    }
+
+    /* POPUP FADE */
+    .popup {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .popup.show {
+      display: flex;
+      opacity: 1;
+    }
+
+  
+  </style>
+</head>
+<body>
+
+ <!-- SIDEBAR NAVBAR -->
+<nav class="sidebar">
+  <div class="logo">
+    <h2>Mabini<span>Tour</span></h2>
+  </div>
+  <ul class="menu">
+    <li><a href="#discover" class="nav-btn">🏝 Discover</a></li>
+    <li><a href="#plan" class="nav-btn">🗓 Plan</a></li>
+    <li><a href="#map" class="nav-btn">📍 Location</a></li>
+    <li><a href="#contact" class="nav-btn">✉ Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <div class="overlay"></div>
+  <div class="header-content">
+    <h1>Tropical Escape</h1>
+    <p class="tagline">Discover Hidden Islands & Towering Highlands</p>
+    
+    <!-- New Sub-heading -->
+    <h2 class="sub-heading">Adventure, Relaxation & Paradise Await</h2>
+    
+    <!-- Buttons -->
+    <div class="header-buttons">
+      <a href="#discover" class="btn">Start Your Journey</a>
+      <a href="#plan" class="btn secondary-btn">Plan Your Trip</a>
+    </div>
+    
+    <!-- Beach-themed Highlights -->
+    <div class="header-highlights">
+      <div class="highlight">
+        <span>🏖️</span>
+        <p>Sun-Kissed Beaches</p>
+      </div>
+      <div class="highlight">
+        <span>🏝️</span>
+        <p>Secluded Islands</p>
+      </div>
+      <div class="highlight">
+        <span>🌊</span>
+        <p>Crystal Clear Waters</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- INFO SECTION -->
+<section id="discover">
+  <div class="info">
+    <h2>Why Travel With Us?</h2>
+    <p>
+      Our tours are crafted for dreamers and adventurers alike. From sun-soaked shores to misty mountain peaks, we bring you closer to nature’s wonders while ensuring comfort, style, and unforgettable memories.
+    </p>
+
+    <div class="image-gallery">
+      <div class="image-card">
+        <img src="Island.jpg" alt="Island Serenity" class="clickable-img"/>
+        <div class="card-text">
+          <h3>Highland and Bayview Park</h3>
+          <p>Breathe fresh mountain air and marvel at panoramic views.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="resort.jpg" alt="Luxury Resort" class="clickable-img"/>
+        <div class="card-text">
+          <h3>Luxury Resort Stay</h3>
+          <p>Unwind in elegant villas, enjoy infinity pools, and savor world-class dining with a view of paradise.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="anilao.jpg" alt="Anilao Diving Spot" class="clickable-img"/>
+        <div class="card-text">
+          <h3>Anilao Diving Spot</h3>
+          <p>Discover vibrant coral reefs, diverse marine life, and crystal-clear waters — a diver’s paradise in Batangas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT COUNTERS -->
+<section class="stats-section">
+  <div class="info">
+    <h2>Our Achievements</h2>
+    <div class="stats" style="display:flex; justify-content:center; gap:3em; margin-top:2em;">
+      <div>
+        <div class="counter" data-target="15">0</div>
+        <p>Islands Explored</p>
+      </div>
+      <div>
+        <div class="counter" data-target="120">0</div>
+        <p>Tours Completed</p>
+      </div>
+      <div>
+        <div class="counter" data-target="500">0</div>
+        <p>Happy Travelers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="mountain-section" style="background-image: url('PUT-YOUR-BACKGROUND-LINK-HERE');">
+  <div class="overlay"></div>
+  <div class="mountain-content">
+    <h2>Unforgettable Experiences</h2>
+    <p>
+      Adventure, relaxation, and culture in one trip. Join our guided tours and discover secret spots that make every journey one-of-a-kind.  
+      Your adventure begins the moment you step off the beaten path.
+    </p>
+  </div>
+</section>
+
+<!-- PLAN YOUR VISIT -->
+<section id="plan" class="cta-section">
+  <h2>Plan Your Visit</h2>
+  <p>Adventure, relaxation, and culture await. Book your trip now and experience paradise your way.</p><br>
+  <a href="#contact" class="btn">Get Started</a>
+</section>
+
+<!-- MAP SECTION -->
+<section id="map" class="map-section">
+  <h2>Find Us</h2>
+  <p>Mabini, Batangas — the heart of diving in the Philippines.</p>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61720.86464536447!2d120.86986584343228!3d13.738844125918269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd1f046b529d2d%3A0x6c6f73db6a7bb3aa!2sMabini%2C%20Batangas!5e0!3m2!1sen!2sph!4v1709476449051"
+    width="100%" height="400" style="border:0;" allowfullscreen loading="lazy">
+  </iframe>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <p>&copy; 2025 Tropical Escape Tours | Travel Beyond the Horizon</p>
+  <div class="social-links">
+    <a href="https://web.facebook.com/AnilaoAwariBay" class="social-btn facebook" target="_blank">Facebook</a>
+    <a href="#" class="social-btn instagram" target="_blank">Instagram</a>
+    <a href="#" class="social-btn twitter" target="_blank">Twitter</a>
+  </div>
+</footer>
+
+
+
+<!-- BACK-TO-TOP BUTTON -->
+<button id="backToTop" title="Go to top">⬆</button>
+
+<!-- IMAGE POPUP -->
+<div id="imagePopup" class="popup">
+  <span class="close">&times;</span>
+  <img class="popup-content" id="popupImage">
+</div>
+
+<!-- FLOATING LEAVES -->
+<script>
+  // DYNAMIC FLOATING LEAVES
+  const leafCount = 10; // number of leaves
+  for(let i=0;i<leafCount;i++){
+    const leaf = document.createElement('div');
+    leaf.className = 'leaf';
+    leaf.style.left = `${Math.random()*100}%`;
+    leaf.style.width = `${20 + Math.random()*30}px`;
+    leaf.style.height = `${20 + Math.random()*30}px`;
+    leaf.style.opacity = `${0.3 + Math.random()*0.7}`;
+    leaf.style.animationDuration = `${5 + Math.random()*15}s`;
+    document.body.appendChild(leaf);
+  }
+</script>
+
+<script>
+  // IMAGE POPUP
+  const popup = document.getElementById("imagePopup");
+  const popupImg = document.getElementById("popupImage");
+  const closeBtn = document.querySelector(".close");
+  document.querySelectorAll(".clickable-img").forEach(img => {
+    img.addEventListener("click", () => {
+      popupImg.src = img.src;
+      popup.classList.add("show");
+    });
+  });
+  closeBtn.addEventListener("click", () => popup.classList.remove("show"));
+  window.addEventListener("click", e => { if(e.target === popup) popup.classList.remove("show"); });
+
+  // BACK-TO-TOP BUTTON
+  const backToTop = document.getElementById("backToTop");
+  window.onscroll = () => {
+    backToTop.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+  };
+  backToTop.onclick = () => { window.scrollTo({top:0, behavior:"smooth"}); };
+
+  // COUNTER ANIMATION
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 200;
+      if(count < target){
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCounter, 10);
+      } else { counter.innerText = target; }
+    };
+    updateCounter();
+  });
+</script>
+</body>
+</html>
